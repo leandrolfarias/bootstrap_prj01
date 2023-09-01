@@ -31,7 +31,7 @@ const meuCallback = (conteudo) => {
         limpaForm();
         alert('CEP não encontrado. Digite um novo CEP.');
 
-    }
+    };
 };
 
 // invalida a submissão de dados do formulário
@@ -56,7 +56,7 @@ pesquisaCep.addEventListener('blur', () => {
             let script = document.createElement('script');
 
             // sincroniza callback
-            script.src = 'https://viacep.com.br/ws/' + cep + '/json/?callback=meuCallback'
+            script.src = 'https://viacep.com.br/ws/' + cep + '/json/?callback=meuCallback';
 
             // insere o script no documento e carrega o conteúdo
             document.body.appendChild(script);
@@ -67,9 +67,9 @@ pesquisaCep.addEventListener('blur', () => {
             limpaForm();
             alert('CEP inválido. Digite um novo CEP.');
 
-        }
+        };
 
-    }
+    };
 });
 
 // evento do botão Cadastrar
@@ -102,7 +102,7 @@ cadastrar.addEventListener('click', () => {
     else {
         labelModal.innerHTML = 'Cadastro não realizado!';
         novoUsuario.innerHTML = 'É necessário aceitar os Termos e Condições de uso do Sistema';
-    }
+    };
 });
 
 loginBotao.addEventListener('click', () => {
@@ -116,6 +116,6 @@ loginBotao.addEventListener('click', () => {
     else {
         alert('Login realizado com sucesso');
         loginNavbar.style.color = "red";
-        loginNavbar.innerHTML = "Logout"
-    }
+        loginNavbar.innerHTML = "Logout";
+    };
 })
