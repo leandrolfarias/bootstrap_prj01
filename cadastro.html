@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meu projeto Bootstrap</title>
+
+  <!-- nome do autor -->
+  <meta name="author" content="Leandro Leal Farias" />
+
+  <!-- indexação dos mecanismos de busca -->
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords"
+  content="javascript, bootstrap, css, html, carrosel, modal, accordion, curso, front-end" />
+  <meta name="description" content="Esta página é um teste feito com Boostrap." />
+
+  <!-- CSS Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+  <!-- Meu CSS -->
+  <link href="css/estilos.css" rel="stylesheet" type="text/css" />
+
+  <!-- favicon -->
+  <link href="imagens/icon.png" rel="shortcut icon" type="image/png" />
+</head>
+
+<body>
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg bg-dark menu-borda" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="imagens/icon.png" alt="Bootstrap" width="40" height="40">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cadastro.html">Cadastro</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="conceitos.html">Conceitos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link active" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- fim do navbar -->
+
+  <!-- Modal Login -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="loginModalLabel">Faça seu login</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Nome do usuário</label>
+              <input type="text" class="form-control" id="recipient-name" required>
+            </div>
+            <div class="mb-3">
+              <!-- <label for="message-text" class="col-form-label">Senha</label> -->
+              <label for="inputPassword5" class="form-label">Senha</label>
+              <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" required>
+              <div id="passwordHelpBlock" class="form-text">
+                Sua senha deve conter de 8-20 caracteres, contendo letras e números, não deve conter espaços, caracteres
+                especiais ou emojis.
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-primary" id="loginBotao">Login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fim Modal Login -->
+
+  <!-- formulário -->
+  <main class="mt-5">
+    <div class="container">
+      <h1>Formulário de cadastro</h1>
+      <hr />
+      <form action="" method="">
+        <section class="row mt-5">
+          <h2>Dados pessoais</h2>
+          <hr />
+          <!-- nome -->
+          <div class="col-md-5 col-12">
+            <div class="mb-3">
+              <label for="nome" class="form-label">Nome</label>
+              <input type="text" class="form-control" id="nome" placeholder="Seu primeiro nome">
+            </div>
+          </div>
+          <!-- sobrenome -->
+          <div class="col-md-7 col-12">
+            <div class="mb-3">
+              <label for="sobrenome" class="form-label">Sobrenome</label>
+              <input type="text" class="form-control" id="sobrenome" placeholder="Seu sobrenome completo">
+            </div>
+          </div>
+          <!-- e-mail -->
+          <div class="col-md-8 col-12">
+            <div class="mb-3">
+              <label for="email" class="form-label">E-mail</label>
+              <input type="email" class="form-control" id="email" placeholder="usuario@servidor.com">
+            </div>
+          </div>
+          <!-- data de nascimento -->
+          <div class="col-md-4 col-12">
+            <div class="mb-3">
+              <label for="dataNasc" class="form-label">Data de nascimento</label>
+              <input type="date" class="form-control" id="dataNasc" />
+            </div>
+          </div>
+          <!-- telefone -->
+          <div class="col-md-3 col-12">
+            <div class="mb-3">
+              <label for="telefone" class="form-label">Telefone</label>
+              <input type="tel" class="form-control" id="telefone" placeholder="(ddd) 9xxxx-xxxx" />
+            </div>
+          </div>
+          <!-- rg -->
+          <div class="col-md-3 col-12">
+            <div class="mb-3">
+              <label for="rg" class="form-label">RG</label>
+              <input type="text" class="form-control" id="rg" placeholder="Registro Geral" />
+            </div>
+          </div>
+          <!-- cpf -->
+          <div class="col-md-3 col-12">
+            <div class="mb-3">
+              <label for="cpf" class="form-label">CPF</label>
+              <input type="text" class="form-control" id="cpf" placeholder="CPF" />
+            </div>
+          </div>
+          <!-- genero -->
+          <div class="col-md-3 col-12">
+            <div class="mb-3">
+              <label for="genero" class="form-label">Gênero</label>
+              <select class="form-select" aria-label="Default select example" id="genero">
+                <option selected value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+                <option value="Não desejo informar">Não desejo informar</option>
+              </select>
+            </div>
+          </div>
+        </section>
+        <!-- endereço -->
+        <section class="row mt-5">
+          <h2>Endereço</h2>
+          <hr />
+          <!-- cep -->
+          <div class="col-md-3 col-12">
+            <div class="mb-3">
+              <label for="cep" class="form-label">CEP</label>
+              <input type="text" class="form-control" id="cep" placeholder="xx.xxx-xxx" />
+            </div>
+          </div>
+          <!-- estado -->
+          <div class="col-md-1 col-12">
+            <div class="mb-3">
+              <label for="uf" class="form-label">UF</label>
+              <input type="text" class="form-control" id="uf" placeholder="UF" />
+            </div>
+          </div>
+          <!-- cidade -->
+          <div class="col-md-4 col-12">
+            <div class="mb-3">
+              <label for="cidade" class="form-label">Cidade</label>
+              <input type="text" class="form-control" id="cidade" placeholder="Cidade" />
+            </div>
+          </div>
+          <!-- bairro -->
+          <div class="col-md-4 col-12">
+            <div class="mb-3">
+              <label for="bairro" class="form-label">Bairro</label>
+              <input type="text" class="form-control" id="bairro" placeholder="Bairro" />
+            </div>
+          </div>
+          <!-- logradouro -->
+          <div class="col-md-9 col-12">
+            <div class="mb-3">
+              <label for="logradouro" class="form-label">Logradouro</label>
+              <input type="text" class="form-control" id="logradouro" placeholder="Logradouro" />
+            </div>
+          </div>
+          <!-- número -->
+          <div class="col-md-3 col-12">
+            <div class="mb-3">
+              <label for="numero" class="form-label">Número</label>
+              <input type="text" class="form-control" id="numero" placeholder="Número" />
+            </div>
+          </div>
+          <!-- complemento -->
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="complemento" class="form-label">Complemento</label>
+              <input type="text" class="form-control" id="complemento" placeholder="Complemento" />
+            </div>
+          </div>
+        </section>
+        <!-- Termos e condições de uso -->
+        <div class="col-12 mt-3 mb-5">
+          <input type="checkbox" id="termos" />
+          <span>
+            Li e aceito os <a href="#" data-bs-toggle="modal" data-bs-target="#termosUsoModal">
+              termos e condições de uso</a> do sistema.
+          </span>
+          <!-- Modal Termos e Condições de Uso-->
+          <div class="modal fade modal-xl" id="termosUsoModal" data-bs-backdrop="static" data-bs-keyboard="false"
+            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel">Termos e condições de uso</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Dignissim
+                    suspendisse in est ante in nibh mauris. Quis commodo odio aenean sed adipiscing diam donec
+                    adipiscing tristique. Eu non diam phasellus vestibulum lorem sed risus. Sit amet nisl purus in.
+                    Nulla pharetra diam sit amet nisl suscipit adipiscing bibendum. Vitae sapien pellentesque habitant
+                    morbi tristique. Blandit massa enim nec dui nunc mattis enim. Consectetur a erat nam at lectus urna.
+                    Semper viverra nam libero justo laoreet sit amet. Fusce id velit ut tortor pretium. Tempor orci eu
+                    lobortis elementum. Egestas tellus rutrum tellus pellentesque eu. Lorem ipsum dolor sit amet
+                    consectetur adipiscing elit duis tristique. Tellus at urna condimentum mattis pellentesque. Massa
+                    placerat duis ultricies lacus sed turpis tincidunt id aliquet. Suspendisse in est ante in nibh.
+                    Libero volutpat sed cras ornare arcu. In aliquam sem fringilla ut morbi.</p>
+
+                  <p>placerat duis ultricies lacus sed turpis tincidunt id. Aliquam etiam erat velit scelerisque in
+                    dictum. Ullamcorper eget nulla facilisi etiam dignissim diam quis enim. Faucibus in ornare quam
+                    viverra orci sagittis eu volutpat odio. Consequat nisl vel pretium lectus quam. Eget nunc lobortis
+                    mattis aliquam faucibus purus. Viverra vitae congue eu consequat ac felis. Diam vulputate ut
+                    pharetra sit. Etiam sit amet nisl purus in mollis. Sociis natoque penatibus et magnis dis
+                    parturient. Potenti nullam ac tortor vitae. Justo nec ultrices dui sapien eget mi proin sed. Rhoncus
+                    aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque. Orci nulla pellentesque
+                    dignissim enim. Elementum tempus egestas sed sed risus. Consectetur purus ut faucibus pulvinar. Arcu
+                    cursus vitae congue mauris rhoncus. Amet nulla facilisi morbi tempus iaculis urna id volutpat.
+                    Tristique magna sit amet purus gravida quis blandit.</p>
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                  <!-- <button type="button" class="btn btn-primary">Concordo</button>  -->
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Fim do Modal Termos e Condições de Uso -->
+        </div>
+        <!-- botão -->
+        <div class="col-md-3 col-12">
+          <button type="button" id="cadastrar" class="btn btn-primary mt-5" data-bs-toggle="modal"
+            data-bs-target="#cadastroModal">Cadastrar</button>
+        </div>
+      </form>
+    </div>
+  </main>
+  <!-- fim do formulário -->
+
+  <!-- Modal Cadastro do Usuário-->
+  <div class="modal fade modal-xl" id="cadastroModal" data-bs-backdrop="static" data-bs-keyboard="false"
+            tabindex="-1" aria-labelledby="tituloModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p class="modal-title fs-4" id="tituloModal"></p>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <p id="novoUsuario" class="fs-6"></p>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fim do Modal Cadastro do Usuário -->
+
+  <!-- footer -->
+  <footer>
+    <div class="container">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-body-secondary">© 2023 Company, Inc</p>
+
+        <a href="/"
+          class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+          <!-- <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg> -->
+          <img src="imagens/icon.png" alt="Bootstrap" width="40" height="40">
+        </a>
+
+        <ul class="nav col-md-4 justify-content-end">
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+        </ul>
+      </footer>
+    </div>
+  </footer>
+  <!-- fim do footer -->
+
+  <!-- JS Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+
+  <!-- Meu JS -->
+  <script src="js/script.js" />
+</body>
+
+</html>
